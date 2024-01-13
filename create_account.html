@@ -86,53 +86,59 @@
       display: none;
     }
   </style>
-  <title>Login Form</title>
+  <title>Create Account</title>
 </head>
 <body>
 
   <div class="login-box">
     <img src="syncplacelogin.png" alt="Logo">
-    <div class="welcome-text">Bem-vindo(a) de volta!</div>
+    <div class="welcome-text">Crie sua conta</div>
     <div class="alert" id="alertBox"></div>
     <div class="input-box">
-      <input type="email" id="emailInput" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      <input type="text" id="fullNameInput" placeholder="Nome completo">
+    </div>
+    <div class="input-box">
+      <input type="text" id="usernameInput" placeholder="Nome de usuário (Sem caixa alta)">
     </div>
     <div class="input-box">
       <input type="password" id="passwordInput" placeholder="Senha" required>
     </div>
+    <div class="input-box">
+      <input type="password" id="confirmPasswordInput" placeholder="Confirmar Senha" required>
+    </div>
     <div class="action-buttons">
-      <button onclick="login()">Entrar</button>
-      <button style="background-color: transparent; color: #8a3ab9;" onclick="window.location.href='forgot_password.html'">Esqueceu sua senha?</button>
-      <button style="background-color: transparent; color: #8a3ab9;" onclick="window.location.href='create_account.html'">Criar Login</button>
+      <button onclick="createAccount()">Criar Conta</button>
+      <button style="background-color: transparent; color: #8a3ab9;" onclick="window.location.href='index.html'">Já tem uma conta? Faça login</button>
     </div>
   </div>
 
   <script>
-    function login() {
-      var email = document.getElementById("emailInput").value;
+    function createAccount() {
+      var fullName = document.getElementById("fullNameInput").value;
+      var username = document.getElementById("usernameInput").value;
       var password = document.getElementById("passwordInput").value;
+      var confirmPassword = document.getElementById("confirmPasswordInput").value;
 
-      // Verifica se o email atende às condições esperadas
-      if (!email.endsWith("@sync.delta.com")) {
+      // Verifica se as senhas coincidem
+      if (password !== confirmPassword) {
         var alertBox = document.getElementById("alertBox");
-        alertBox.innerHTML = "Surname do Syncplace não encontrado.";
+        alertBox.innerHTML = "As senhas não coincidem.";
         alertBox.style.display = "block";
         return;
       }
 
-      // Obtém os dados do usuário cadastrado
-      var userData = JSON.parse(localStorage.getItem(email));
+      // Cria um objeto com os dados do usuário
+      var userData = {
+        fullName: fullName,
+        username: username,
+        password: password
+      };
 
-      // Verifica se o usuário existe e a senha está correta
-      if (userData && password === userData.password) {
-        // Redireciona para o próximo site se o email e a senha forem válidos
-        window.location.href = "home.html";
-      } else {
-        // Exibe alerta se as credenciais não correspondem
-        var alertBox = document.getElementById("alertBox");
-        alertBox.innerHTML = "Surname do Syncplace ou senha incorretos.";
-        alertBox.style.display = "block";
-      }
+      // Salva os dados do usuário no armazenamento local
+      localStorage.setItem(username + "@sync.delta.com", JSON.stringify(userData));
+
+      // Redireciona para a tela de login após a criação da conta
+      window.location.href = "index.html";
     }
   </script>
 
