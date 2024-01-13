@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #8a3ab9; /* Fundo roxo do Nubank */
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .amazon-container {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px; /* Aumentado o padding */
+      background-color: rgba(255, 255, 255, 0.9); /* Caixa translúcida */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px; /* Aumentado o border-radius */
+      color: #332776; /* Cor roxa do Nubank */
+      text-align: center;
+    }
+
+    .amazon-logo {
+      width: 200px; /* Tamanho aumentado */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: center; /* Centralizando */
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .search-button {
+      background-color: #332776; /* Cor roxa do Nubank */
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .product {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      align-items: center; /* Centralizar verticalmente */
+    }
+
+    .product-image {
+      width: 150px; /* Largura da imagem ajustável */
+      height: auto;
+      border-radius: 10px; /* Adicionado bordas arredondadas */
+    }
+
+    .product-info {
+      margin-left: 20px;
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .play-button {
+      background-color: #332776; /* Cor roxa do Nubank */
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none; /* Adicionado para remover o sublinhado padrão */
+      display: inline-block;
+      margin-top: 10px; /* Ajuste de margem superior */
+    }
+
+    .description {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+  <title>Delta Datacenter - O banco de dados para projetos da Etec.</title>
+</head>
+<body>
+
+  <div class="amazon-container">
+    <img src="datacenter.png" alt="Amazon Logo" class="amazon-logo">
+    <div class="search-bar">
+      <input type="text" class="search-input" id="searchInput" placeholder="O que você está procurando?">
+      <button class="search-button" onclick="searchFunction()">Buscar</button>
+    </div>
+
+    <div class="product">
+      <img src="lucius.png" alt="Product Image" class="product-image">
+      <div class="product-info">
+        <div class="product-title">Beat 'Em, Lucius!</div>
+        <p class="description">Um jovem alucinado que precisa deter uma invasão alienígena para poder... DORMIR?</p>
+        <a href="lucius.html" class="play-button">Ver sobre</a>
+      </div>
+    </div>
+
+    <!-- Adicione mais produtos ou conteúdo conforme necessário -->
+  </div>
+
+  <script>
+    function searchFunction() {
+      var searchTerm = document.getElementById("searchInput").value;
+      alert("A pesquisa não está funcionando, Tente novamente mais tarde.");
+    }
+  </script>
+
+</body>
+</html>
+

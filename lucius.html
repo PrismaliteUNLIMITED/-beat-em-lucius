@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('lucius-back.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #332776;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .lucius-container {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px; /* Aumentado o padding */
+      background-color: rgba(255, 255, 255, 0.9); /* Caixa translúcida */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px; /* Aumentado o border-radius */
+      text-align: center;
+      animation: fadeIn 0.5s ease-in; /* Adicionado fade-in animation */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .lucius-logo {
+      width: 200px; /* Tamanho aumentado */
+      height: auto;
+      cursor: pointer;
+    }
+
+    .lucius-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .play-button {
+      background-color: #332776; /* Cor roxa do Nubank */
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none; /* Adicionado para remover o sublinhado padrão */
+      display: inline-block;
+      margin-top: 20px; /* Ajuste de margem superior */
+    }
+  </style>
+  <title>Beat 'Em, Lucius! - Delta.OS Datacenter</title>
+</head>
+<body>
+
+  <div class="lucius-container">
+    <img src="encore.png" alt="Lucius Logo" class="lucius-logo" onclick="goToHome()">
+    <div class="lucius-title">Beat 'Em, Lucius!</div>
+    <p class="description">Conheça Lucius, um jovem alucinado que precisa deter uma invasão alienígena para poder... DORMIR?</p><br>
+    <p class="description">Lançado em: 06/12/2023</p><br><br>
+    <p class="description">Condição do Projeto: Funcional</p>
+    <p class="description">Desenvolvedor(es): João Pedro Livino Bernardino e Victor Luis Abreu de Oliveira</p>
+    <a href="https://gx.games/pt-br/games/cwtrzj/beat-em-lucius-/" class="play-button">Jogue agora no GX.Games!</a><br><br>
+    <a href="home.html" class="home-button">Voltar</a>
+  </div>
+
+  <script>
+    function goToHome() {
+      window.location.href = "https://gx.games/pt-br/games/cwtrzj/beat-em-lucius-/";
+    }
+  </script>
+
+</body>
+</html>
